@@ -10,42 +10,40 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="">
-      <header class="text-gray-600 body-font border-b-2">
-        <div class="container mx-auto flex justify-between p-6 flex-col md:flex-row">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
-            <svg
-              class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              fill="none"
+    <header class="text-gray-600 body-font border-b-2">
+      <div class="max-w-screen-lg  mx-auto flex justify-between p-6 flex-col md:flex-row">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
+          <svg
+            class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
               stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              ></path>
-            </svg>
-            <span class="ml-3 text-xl"> programming.protips.wiki </span>
-          </a>
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+            ></path>
+          </svg>
+          <span class="ml-3 text-xl"> programming.protips.wiki </span>
+        </a>
 
-          <div class="flex space-x-2 items-end">
-            <a href="https://github.com/magicmark/programming-protips-wiki"
-              ><img
-                src="https://img.shields.io/github/stars/magicmark/programming-protips-wiki.svg?style=social&amp;label=Star"
-                alt="github" /></a
-            ><a
-              href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fprogramming.protips.wiki+-+A+collection+of+programming+protips%21"
-              ><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="twitter"
-            /></a>
-          </div>
+        <div class="flex space-x-2 items-end">
+          <a href="https://github.com/magicmark/programming-protips-wiki"
+            ><img
+              src="https://img.shields.io/github/stars/magicmark/programming-protips-wiki.svg?style=social&amp;label=Star"
+              alt="github" /></a
+          ><a
+            href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fprogramming.protips.wiki+-+A+collection+of+programming+protips%21"
+            ><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="twitter"
+          /></a>
         </div>
-      </header>
-    </div>
-    <div class="container mx-auto p-6">
+      </div>
+    </header>
+    <div class="max-w-screen-lg mx-auto p-6">
       <main>{{ content | safe }}</main>
     </div>
     <script>
