@@ -1,6 +1,6 @@
 ---
 title: Limit what you catch
-tags: ["error-handling"]
+tags: ['error-handling']
 ---
 
 Be specific when catching an error. Re-throw all other errors.

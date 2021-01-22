@@ -5,7 +5,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/css/styles.css");
     eleventyConfig.addPassthroughCopy("./src/img");
     eleventyConfig.addCollection("protips", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("./src/protips/**/*.md");
+        return collectionApi.getFilteredByGlob("./src/protips/*.md");
     });
 
     eleventyConfig.addFilter("inspect", function (value) {

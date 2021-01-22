@@ -1,6 +1,6 @@
 ---
 title: Limit the amount of logic in a try/catch block
-tags: ["error-handling"]
+tags: ['error-handling']
 ---
 
 Keep the amount of logic in your try/catch blocks to a minimum.
@@ -30,9 +30,9 @@ try {
 let config;
 
 try {
-  config = fs.readFileSync(path.join(process.cwd(), configFile), "utf8");
+  config = fs.readFileSync(path.join(process.cwd(), configFile), 'utf8');
 } catch (e) {
-  console.error("Could not read config file, assuming defaults.");
+  console.error('Could not read config file, assuming defaults.');
 }
 ```
 
