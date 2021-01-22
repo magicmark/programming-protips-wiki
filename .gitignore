@@ -1,4 +1,5 @@
 node_modules/
 public/
 src/css/styles.css
+src/css/dracula.css
 yarn-error.log

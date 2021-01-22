@@ -4,22 +4,12 @@
   "description": "A collection of programming protips",
   "scripts": {
     "build:css": "postcss src/css/tailwind.css > src/css/styles.css",
-    "dev": "eleventy --serve",
-    "build": "eleventy && NODE_ENV=production yarn build:css"
+    "dev": "yarn build:css && eleventy --serve",
+    "build": "NODE_ENV=production yarn build:css && eleventy"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://marcamos@github.com/marcamos/jet.git"
-  },
-  "keywords": [
-    "eleventy",
-    "11ty",
-    "tailwind",
-    "tailwindcss",
-    "purgecss"
-  ],
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.1",
     "cssnano": "^4.1.10",
     "plop": "^2.7.4",

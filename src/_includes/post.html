@@ -1,1 +1,59 @@
-<div>{{ content | safe }}</div>
+---
+layout: base.html
+---
+
+<div class="flex flex-col space-y-4 mb-8">
+  
+ 
+  <div class="flex -mt-2">
+    <a
+      href="/"
+      class="text-gray-400 hover:bg-gray-200 transition duration-75 flex space-x-2 items-center rounded-lg -ml-3 p-3"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+
+      <span class="text-gray-500">View more protips</span>
+    </a>
+  </div> 
+
+  <div class="flex flex-col">
+    <button id="copy-link" class="text-sm text-left text-gray-600 mb-2 text-indigo-400">Copy link to this page</button>
+    <div class="flex space-x-2 items-center">
+      <input
+        type="text"
+        disabled
+        value="https://programming.protips.wiki/{{ page.fileSlug }}"
+        class="w-full bg-gray-100  font-mono bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 text-lg font-bold focus:border-indigo-500 outline-none text-gray-600 py-3 px-5 leading-8"
+      />
+    </div>
+  </div>
+
+  <!--<div class="flex">
+    <a
+      href="/"
+      class="text-gray-400 hover:bg-gray-200 transition duration-75 flex space-x-2 items-center rounded-lg -ml-3 p-3"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+
+      <span class="text-gray-500">View more protips</span>
+    </a>
+  </div>-->
+
+</div>
+
+<div class="prose prose-indigo max-w-none">
+  <h1>{{title}}</h1>
+  {{ content | safe }}
+</div>
+
+<script>
+  document.querySelector('#copy-link').addEventListener('click', () => {
+    navigator.clipboard.writeText('https://programming.protips.wiki/{{ page.fileSlug }}').then(() => {
+      document.querySelector('#copy-link').innerText = 'Copy link to this page - saved to clipboard!';
+    });
+  });
+</script>

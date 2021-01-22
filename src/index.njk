@@ -28,10 +28,10 @@ title: Programming Protips Wiki
   </p>
 
   <h1 class="font-semibold text-xl mt-6 mb-1">Protips</h1>
-  <ul class="list-inside list-disc	">
+  <ul class="list-inside list-disc">
     {%- for protip in collections.protips %}
-    <li class="text-lg">
-      <a href="{{ protip.data.page.url }}" class="text-indigo-500 hover:underline"
+    <li class="text-lg hover:underline">
+      <a href="{{ protip.data.page.url }}" class="text-indigo-500"
         ><span class="mr-1 font-mono">/{{ protip.data.page.fileSlug }}/</span> — 
         <span class="ml-1 font-bold">{{ protip.data.title }}</span></a
       >

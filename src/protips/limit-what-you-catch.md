@@ -40,4 +40,4 @@ errors types than you expect! (e.g. Someone accidentally renames the
 
 Avoid "catch all" blocks that gobble up errors we didn't intend to catch.
 
-More reading: https://gist.github.com/jehugaleahsa/f3c43d41e68a6b4bc73d2d6cbaee876a#within-a-limited-scope
+More reading: <https://gist.github.com/jehugaleahsa/f3c43d41e68a6b4bc73d2d6cbaee876a#within-a-limited-scope>
