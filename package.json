@@ -3,8 +3,9 @@
   "version": "2.0.0",
   "description": "It's (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it's still *really* small though.",
   "scripts": {
+    "build:css": "postcss src/css/tailwind.css > src/css/styles.css",
     "clean": "rm -rf public src/css/styles.css",
-    "dev": "npm run clean && postcss src/css/tailwind.css > src/css/styles.css && eleventy --serve",
+    "dev": "rm -rf public && eleventy --serve",
     "build": "npm run clean && NODE_ENV=production postcss src/css/tailwind.css > src/css/styles.css && eleventy"
   },
   "repository": {

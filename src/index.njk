@@ -1,0 +1,25 @@
+---
+layout: base.html
+title: Programming Protips Wiki
+---
+<div>
+  <h1 class="font-semibold text-3xl">programming.protips.wiki</h1>
+  <p class="mt-1">A collection of programming protips</p>
+
+  <h2 class="font-semibold text-xl mt-6">How to use this website</h1>
+  <p class="mt-1">This website aims to save code reviewers from typing out the
+  same explanations for common issues/patterns.</p>
+  <p class="mt-1">Instead, you may provide a link to a protip, which contains a
+  <i>"bad"</i> example, a <i>"good"</i> example, and an explanation <i>why</i>
+  the pattern is encouraged/discouraged.
+
+  <h2 class="font-semibold text-xl mt-6 mb-1">Contributing</h1>
+  <p class="mt-1">If you'd like to add more protips, please visit the GitHub repo!</p>
+
+  <h1 class="font-semibold text-xl mt-6 mb-1">Protips</h1>
+  <ul>
+  {%- for protip in collections.all %}
+    <li>{{ protip.data.title }}</li>
+  {%- endfor %}
+  </ul>
+</div>

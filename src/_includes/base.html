@@ -1,15 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="It’s (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it’s still really small though.">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="/css/styles.css">
-  </head>
-  <body>
-    <main>
-      {{ content | safe }}
-    </main>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="It’s (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it’s still really small though."
+        />
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+        <div class="">
+            <header class="text-gray-600 body-font border-b-2">
+                <div
+                    class="container mx-auto flex justify-between p-5 flex-col md:flex-row items-center"
+                >
+                    <a
+                        class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+                    >
+                        <svg
+                            class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            ></path>
+                        </svg>
+                        <span class="ml-3 text-xl">
+                            programming.protips.wiki
+                        </span>
+                    </a>
+
+                    <div class="flex space-x-2">
+                        <a
+                            href="https://github.com/magicmark/composerize"
+                            class="sc-bxivhb iLpaO"
+                            ><img
+                                src="https://img.shields.io/github/stars/magicmark/composerize.svg?style=social&amp;label=Star"
+                                alt="github" /></a
+                        ><a
+                            href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fcomposerize.com%2F+-+A+nifty+tool+for+converting+docker+run+commands+into+docker-compose+files%21"
+                            class="sc-bxivhb iLpaO"
+                            ><img
+                                src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"
+                                alt="twitter"
+                        /></a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="container mx-auto py-6">
+            <main>{{ content | safe }}</main>
+        </div>
+    </body>
 </html>

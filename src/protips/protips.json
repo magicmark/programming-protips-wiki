@@ -1,0 +1,4 @@
+{
+    "permalink": "/{{ page.fileSlug }}/",
+    "layout": "post.html"
+}
