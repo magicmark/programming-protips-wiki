@@ -2,6 +2,8 @@
 
 > A collection of programming protips
 
+https://programming.protips.wiki
+
 <img src="https://i.fluffy.cc/ptw9Z1CtK87rGj1qJBV5WChCqhjvJ7jV.png">
 
 ## Contributing
