@@ -1,15 +1,28 @@
 ---
-title: Only pass what you need to functions.
+title: Don't pass huge configuration objects to helper functions
 tags: []
 ---
 
-Avoid passing huge objects or unnecessary arguments to functions. Only pass what
-the function really needs.
+Avoid passing around huge, monolithic objects around to helper functions. Only
+pass what the function really needs.
 
 **Bad Example**
 
-```js
-async function getFormattedName(context, id) {
+```typescript
+// A GraphQL 'context' object
+interface Context {
+  request: Request;
+  headers: Headers;
+  settings: AppSettings;
+  loaders: DataLoaders;
+  zipkinTracer: Tracer;
+  // ...
+  // ...
+  // ... lots more items
+  // ...
+}
+
+async function getFormattedName(context: Context, id: number): string {
   // Fetch the user object
   const user = await context.loaders.user.load(id);
 
@@ -33,11 +46,13 @@ getFormattedName(await context.loaders.user.load(4));
 
 ## Why?
 
-In the first example, we pass a GraphQL 'context' object, which may contain tens
-or hundreds of other unrelated key/values. But our function only needs to call
-one function contained within.
+In the first example, we pass a [GraphQL 'context' object][context], which may
+contain tens or hundreds of other unrelated key/values. But our
+`getFormattedName` function only needed to call one function nested within.
 
-Passing the entire context object is bad because:
+[context]: https://graphql.org/learn/execution/#root-fields-resolvers
+
+Passing the entire object is bad because:
 
 - It's harder to unit test `getFormattedName` - you'd need to conjure up a whole
   context object in the right structure.
@@ -48,3 +63,7 @@ Passing the entire context object is bad because:
 
 (We could even simplify the signature of `getFormattedName` further, so as to not
 take in the whole user object - e.g. `getFormattedName(firstName, lastName)`.)
+
+See more:
+
+- <http://wiki.c2.com/?TooManyParameters>
