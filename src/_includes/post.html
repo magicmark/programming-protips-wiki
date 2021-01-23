@@ -23,13 +23,13 @@ layout: base.html
         type="text"
         disabled
         value="https://programming.protips.wiki/{{ page.fileSlug }}"
-        class="w-full bg-gray-100 font-mono bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 text-lg font-bold focus:border-indigo-500 outline-none text-gray-600 py-3 px-5 leading-8"
+        class="w-full bg-gray-100 font-mono bg-opacity-50 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 text-sm lg:text-lg font-bold focus:border-indigo-500 outline-none text-gray-600 py-1 px-3 leading-8 lg:py-3 lg:px-5"
       />
     </div>
   </div>
 </div>
 
-<div class="prose prose-indigo max-w-none">
+<div class="prose prose-indigo max-w-none break-words">
   <h1>{{title}}</h1>
   {{ content | safe }}
 </div>

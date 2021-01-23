@@ -3,8 +3,8 @@ layout: base.html
 title: Programming Protips Wiki
 ---
 
-<div>
-  <h1 class="font-bold text-3xl">programming.protips.wiki</h1>
+<div class="break-words">
+  <h1 class="font-bold text-2xl md:text-3xl">programming.protips.wiki</h1>
   <p class="mt-2 text-gray-800">A collection of programming protips</p>
 
   <h2 class="font-semibold text-xl mt-6">How to use this website</h2>
@@ -27,14 +27,14 @@ title: Programming Protips Wiki
     >
   </p>
 
-  <h1 class="font-semibold text-xl mt-6 mb-1">Protips</h1>
-  <ul class="list-inside list-disc">
+  <h1 class="font-semibold text-xl mt-6 mb-2">Protips</h1>
+  <ul class="space-y-4">
     {%- for protip in collections.protips %}
     <li class="text-lg hover:underline">
-      <a href="{{ protip.data.page.url }}" class="text-indigo-500"
-        ><span class="mr-1 font-mono">/{{ protip.data.page.fileSlug }}/</span> — 
-        <span class="ml-1 font-bold">{{ protip.data.title }}</span></a
-      >
+      <a href="{{ protip.data.page.url }}" class="text-indigo-500 flex flex-col">
+        <span class="mr-1 font-mono text-sm ">/{{ protip.data.page.fileSlug }}/</span>
+        <span class="ml-1 font-bold">{{ protip.data.title }}</span>
+      </a>
     </li>
     {%- endfor %}
   </ul>
