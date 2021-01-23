@@ -18,14 +18,12 @@ layout: base.html
 
   <div class="flex flex-col">
     <div class="flex">
-      <button id="copy-link" class="text-sm text-left text-gray-600 mb-2 text-indigo-400">
-        Copy link to this page
-      </button>
+      <button id="copy-link" class="text-sm text-left mb-2 text-indigo-400">Copy link to this page</button>
     </div>
     <div class="flex space-x-2 items-center">
       <input
         type="text"
-        disabled
+        readonly
         value="https://programming.protips.wiki/{{ page.fileSlug }}"
         class="w-full bg-gray-100 font-mono bg-opacity-50 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 text-sm lg:text-lg font-bold focus:border-indigo-500 outline-none text-gray-600 py-1 px-3 leading-8 lg:py-3 lg:px-5"
       />
@@ -42,6 +40,13 @@ layout: base.html
   </div>
   {{ content | safe }}
 </div>
+
+<style type="text/css">
+  code {
+    overflow-wrap: initial;
+    overflow-x: scroll;
+  }
+</style>
 
 <div class="border-t mt-8 pt-4">
   <a
