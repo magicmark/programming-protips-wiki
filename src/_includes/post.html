@@ -31,6 +31,11 @@ layout: base.html
 
 <div class="prose prose-indigo max-w-none break-words">
   <h1>{{title}}</h1>
+  <div class="-mt-6 text-gray-600 text-lg flex space-x-2 font-light">
+    {%- for tag in tags %}
+    <span>#{{ tag }}</span>
+    {%- endfor %}
+  </div>
   {{ content | safe }}
 </div>
 
