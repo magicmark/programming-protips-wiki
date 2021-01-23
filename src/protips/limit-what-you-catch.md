@@ -35,9 +35,13 @@ Lots of things could throw!
 
 The message displayed to users or recovery logic inside the catch block may only
 apply to a certain type of error. But the catch block may be triggered with more
-errors types than you expect! (e.g. Someone accidentally renames the
+errors types than you expect!
+
+(e.g. Someone accidentally renames the
 `divideNumbers` function, and now we're also catching a `ReferenceError`!)
 
 Avoid "catch all" blocks that gobble up errors we didn't intend to catch.
 
-More reading: <https://gist.github.com/jehugaleahsa/f3c43d41e68a6b4bc73d2d6cbaee876a#within-a-limited-scope>
+More reading:
+
+- <https://gist.github.com/jehugaleahsa/f3c43d41e68a6b4bc73d2d6cbaee876a#within-a-limited-scope>
