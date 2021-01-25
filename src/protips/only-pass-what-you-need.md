@@ -36,7 +36,7 @@ getFormattedName(context, 4);
 **Prefer**
 
 ```js
-function getFormattedName(user) {
+function getFormattedName(user: User): string {
   // e.g. returns "H. Simpson"
   return `${user.firstName.slice(0, 1)}. ${user.lastName}`;
 }
@@ -63,7 +63,3 @@ Passing the entire object is bad because:
 
 (We could even simplify the signature of `getFormattedName` further, so as to not
 take in the whole user object - e.g. `getFormattedName(firstName, lastName)`.)
-
-See more:
-
-- <http://wiki.c2.com/?TooManyParameters>
