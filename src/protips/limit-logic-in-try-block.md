@@ -41,7 +41,8 @@ try {
 There's _lots_ of things could throw inside our original try block. We may
 accidentally silence and ignore unrelated errors.
 
-For example, maybe the config file _was_ found, but `scanPaths` wasn't specified
-- so `scanPaths.forEach` throws, but we silenced it! Uh oh!
+For example, maybe the config file _was_ found, but `scanPaths` wasn't specified.
+That would cause `scanPaths.forEach` to throw later on, but we would be silencing
+it! Uh oh!
 
 Avoid a giant "catch all" try block to avoid gobbling up errors.
