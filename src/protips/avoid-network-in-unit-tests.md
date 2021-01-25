@@ -48,7 +48,7 @@ function. The network should be mocked out, or replaced by a stub if you need to
 check calls to it.
 
 Making network requests implies a server needs to be running, in order to
-successfully fulfil the request. This is usually the domain of End to End (E2E)
+successfully fulfill the request. This is usually the domain of End to End (E2E)
 tests, Integration Tests or Acceptance Tests.
 
 Even if we don't care about the response from the server, we may have to deal

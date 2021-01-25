@@ -6,7 +6,7 @@ tags: []
 When conditionally executing logic in a function based on some initial
 condition(s), consider returning early.
 
-This is also known as a [guard][guard].
+[Guards][guard] implement this pattern.
 
 [guard]: https://en.wikipedia.org/wiki/Guard_(computer_science)
 
