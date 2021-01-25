@@ -1,5 +1,5 @@
 ---
-title: Limit what you catch
+title: Limit what errors you catch in a try/catch block
 tags: ['error-handling']
 ---
 
@@ -37,10 +37,12 @@ The message displayed to users or recovery logic inside the catch block may only
 apply to a certain type of error. But the catch block may be triggered with more
 errors types than you expect!
 
-(e.g. Someone accidentally renames the
-`divideNumbers` function, and now we're also catching a `ReferenceError`!)
+For example, someone could accidentally rename the `divideNumbers` function - and
+now we'd also be catching a `ReferenceError` - but still displaying the "you
+can't divide by zero!" error message.
 
-Avoid "catch all" blocks that gobble up errors we didn't intend to catch.
+If you have custom error handling or "recovery" logic, be specific what errors
+you want to handle, and re-throw all others.
 
 More reading:
 

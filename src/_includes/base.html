@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A collection of programming protips" />
-    <title>{{ title }}</title>
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/dracula.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <title>{{ title }}</title>
   </head>
   <body>
     <header class="text-gray-600 body-font border-b-2">
-      <div class="max-w-screen-lg  mx-auto flex justify-between p-6 flex-col md:flex-row">
-        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
+      <div
+        class="max-w-screen-lg mx-auto flex justify-between p-6 flex-col md:flex-row"
+      >
+        <a
+          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+          href="/"
+        >
           <svg
             class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
             fill="none"
@@ -38,7 +41,9 @@
               alt="github" /></a
           ><a
             href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fprogramming.protips.wiki+-+A+collection+of+programming+protips%21"
-            ><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="twitter"
+            ><img
+              src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"
+              alt="twitter"
           /></a>
         </div>
       </div>
@@ -46,8 +51,5 @@
     <div class="max-w-screen-lg mx-auto p-6">
       <main>{{ content | safe }}</main>
     </div>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
   </body>
 </html>

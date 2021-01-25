@@ -1,5 +1,5 @@
 ---
-title: Don't try and outsmart the type checker
+title: Silencing the type checker is a last resort
 tags: ['types']
 ---
 
@@ -45,14 +45,14 @@ async function getMovieRating(id: number): Promise<number> {
 ```
 
 When the type checker complains about an issue, it's probably correct. In most
-cases, it's warning you about a potential runtime error - in this case, perhaps
+cases, it's warning you about a potential runtime error. In this case, perhaps
 the movie hasn't been released yet, and therefore hasn't been assigned a rating.
 
-(In general, we can't "trust" data that comes from "the outside world" - e.g. the
-network, parsing files on disk etc. Using [guards](guards) or [schemas](ajv) may
-help here.)
+_(In general, we can't "trust" data that comes from "the outside world" - e.g.
+the network, parsing files on disk etc. Using [guards][guards] or [schemas](ajv)
+may help here.)_
 
-[guards]: https://programming.protips.wiki/return-early/
+[guards]: /return-early/
 [ajv]: https://github.com/ajv-validator/ajv
 
 In other cases, the type checker may complain due to some configuration error, or
@@ -61,6 +61,6 @@ spending some time trying to debug the issue. Popular type checkers such as Flow
 and TypeScript are well battle-tested - most error scenarios you could run into
 have probably been discussed before. You may be able to solve it with a quick
 [googling of the stack trace](how-to-google), searching StackOverflow etc - and
-avoid the nasty @ts-ignore!
+avoid the nasty `@ts-ignore`!
 
 [how-to-google]: https://dev.to/swyx/how-to-google-your-errors-2l6o

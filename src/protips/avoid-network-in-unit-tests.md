@@ -57,5 +57,5 @@ because it's awaiting a network response etc.
 
 See more:
 
-- <https://kentcdodds.com/blog/unit-vs-integration-vs-e2e-tests>)
+- <https://kentcdodds.com/blog/unit-vs-integration-vs-e2e-tests>
 

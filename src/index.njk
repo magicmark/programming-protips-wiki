@@ -9,11 +9,13 @@ title: Programming Protips Wiki
 
   <h2 class="font-semibold text-xl mt-6">How to use this website</h2>
   <p class="mt-1 text-gray-800">
-    This website aims to save code reviewers from typing out the same explanations for common issues/patterns.
+    This website aims to save code reviewers from typing out the same
+    explanations for common issues/patterns.
   </p>
   <p class="mt-1 text-gray-800">
-    Instead, you may provide a link to a protip, which contains a <i>"bad"</i> example, a <i>"good"</i> example, and an
-    explanation <i>why</i> the pattern is encouraged/discouraged.
+    Instead, you may provide a link to a protip, which contains a
+    <i>"bad"</i> example, a <i>"good"</i> example, and an explanation
+    <i>why</i> the pattern is encouraged/discouraged.
   </p>
 
   <h2 class="font-semibold text-xl mt-6 mb-1">Contributing</h2>
@@ -31,11 +33,24 @@ title: Programming Protips Wiki
   <ul class="space-y-4">
     {%- for protip in collections.protips %}
     <li class="text-lg hover:underline">
-      <a href="{{ protip.data.page.url }}" class="text-indigo-500 flex flex-col">
-        <span class="mr-1 font-mono text-sm ">/{{ protip.data.page.fileSlug }}/</span>
+      <a
+        href="{{ protip.data.page.url }}"
+        class="text-indigo-500 flex flex-col"
+      >
+        <span class="mr-1 font-mono text-sm"
+          >/{{ protip.data.page.fileSlug }}/</span
+        >
         <span class="ml-1 font-bold">{{ protip.data.title }}</span>
       </a>
     </li>
     {%- endfor %}
   </ul>
+</div>
+
+<div class="border-t mt-8 pt-4">
+  Want to help? Contribute on GitHub! <a
+    class="text-indigo-400 hover:underline"
+    href="https://github.com/magicmark/programming-protips-wiki"
+    >https://github.com/magicmark/programming-protips-wiki</a
+  >
 </div>
