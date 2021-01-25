@@ -12,7 +12,6 @@ Contributions very welcome! To get started, clone and build the repo:
 
 ```
 $ git clone <your fork> && cd programming-protips-wiki
-$ make node_modules
 $ make build
 $ yarn dev
 ```
