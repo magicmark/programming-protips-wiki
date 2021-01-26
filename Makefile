@@ -6,6 +6,7 @@ src/css/dracula.css:
 
 build: node_modules src/css/dracula.css
 	yarn build
+	cp _redirects public/_redirects
 
 .PHONY: clean
 clean:
