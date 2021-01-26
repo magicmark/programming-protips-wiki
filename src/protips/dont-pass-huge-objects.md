@@ -1,5 +1,5 @@
 ---
-title: Don't pass huge configuration objects to helper functions
+title: Don't pass huge monolithic objects to helper functions
 tags: []
 ---
 

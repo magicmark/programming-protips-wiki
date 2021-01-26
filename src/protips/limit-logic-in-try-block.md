@@ -9,16 +9,18 @@ Keep the amount of logic in your try/catch blocks to a minimum.
 
 ```js
 try {
-  const config = yaml.safeLoad(fs.readFileSync(path.join(process.cwd(), configFile), 'utf8'));
+  const config = yaml.safeLoad(
+    fs.readFileSync(path.join(process.cwd(), configFile), 'utf8'),
+  );
   const { projectName, scanPaths } = config;
   const resolvedScanPaths = [];
-  scanPaths.forEach(scanPath => {
+  scanPaths.forEach((scanPath) => {
     resolvedScanPaths.push(path.join(__dirname, scanPath));
   });
-  ...
-  ...
-  27 lines later
-  ...
+  // ...
+  // ...
+  // 27 lines later...
+  // ...
 } catch (e) {
   console.error('Could not read config file, assuming defaults.');
 }
