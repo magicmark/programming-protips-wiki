@@ -44,6 +44,8 @@ async function getMovieRating(id: number): Promise<number> {
 }
 ```
 
+## Why?
+
 When the type checker complains about an issue, it's probably correct. In most
 cases, it's warning you about a potential runtime error. In this case, perhaps
 the movie hasn't been released yet, and therefore hasn't been assigned a rating.
@@ -64,3 +66,54 @@ have probably been discussed before. You may be able to solve it with a quick
 avoid the nasty `@ts-ignore`!
 
 [how-to-google]: https://dev.to/swyx/how-to-google-your-errors-2l6o
+
+## More examples
+
+Consider the following [express][express] middleware to log how long the logic
+layer in a request took:
+
+[express]: https://expressjs.com/
+
+**Bad Example**
+
+```js
+app.use(function (req, res, next) {
+  const { logicStart, logicEnd } = res.locals;
+
+  // $FlowFixMe: logicStart and logicEnd are numbers
+  const logicLayerTime = logicEnd - logicStart;
+  console.log(`Time take for the logic layer: ${logicLayerTime}`);
+
+  next();
+});
+```
+
+**Prefer**
+
+```js
+app.use(function (req, res, next) {
+  const { logicStart, logicEnd } = res.locals;
+
+  assert(typeof logicStart === 'number');
+  assert(typeof logicEnd === 'number');
+
+  const logicLayerTime = logicEnd - logicStart;
+  console.log(`Time take for the logic layer: ${logicLayerTime}`);
+
+  next();
+});
+```
+
+Our middleware has an implicit dependency on someone else, somewhere else, in the
+application setting values for `res.locals.logicStart` and `res.locals.logicEnd`.
+
+If for whatever reason we never set those values (i.e. a bug), both values be
+`null`. Which is particularly nasty for us, because when we come to do our
+calculation for logging, `null - null` [coerces][coercion] to `0`! Which means
+we'd happily continue, logging 0 as a 'valid' value for the time taken. 
+
+We'd never get an error, and it would be hard to notice this! 😱
+
+[coercion]: https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
+
+The type checker is much smarter than us dumb humans :)
