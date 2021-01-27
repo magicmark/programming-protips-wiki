@@ -110,10 +110,10 @@ application setting values for `res.locals.logicStart` and `res.locals.logicEnd`
 If for whatever reason we never set those values (i.e. a bug), both values be
 `null`. Which is particularly nasty for us, because when we come to do our
 calculation for logging, `null - null` [coerces][coercion] to `0`! Which means
-we'd happily continue, logging 0 as a 'valid' value for the time taken. 
+we'd happily continue, logging 0 as a 'valid' value for the time taken.
 
 We'd never get an error, and it would be hard to notice this! 😱
 
 [coercion]: https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
 
-The type checker is much smarter than us dumb humans :)
+The type checker is generally much smarter than us dumb humans :)
