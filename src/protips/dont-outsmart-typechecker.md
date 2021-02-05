@@ -1,5 +1,5 @@
 ---
-title: Silencing the type checker is a last resort
+title: Don't try and outsmart the typechecker
 tags: ['types']
 ---
 
