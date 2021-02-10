@@ -26,7 +26,7 @@ function getConfig(configPath) {
         return fs.readFileSync(configPath, 'utf8');
     } catch (e) {
         return new AggregateError([
-            `Could not read config. Expected ${configPath} to exist`,
+            `Could not read config file: ${configPath}`,
             e,
         ]);
     }
