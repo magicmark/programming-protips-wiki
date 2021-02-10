@@ -44,6 +44,6 @@ can't divide by zero!" error message.
 If you have custom error handling or "recovery" logic, be specific what errors
 you want to handle, and re-throw all others.
 
-More reading:
+### Further reading
 
 - <https://gist.github.com/jehugaleahsa/f3c43d41e68a6b4bc73d2d6cbaee876a#within-a-limited-scope>

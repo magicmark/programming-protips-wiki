@@ -55,7 +55,7 @@ Even if we don't care about the response from the server, we may have to deal
 with slow requests due to timeouts, the test process not shutting down gracefully
 because it's awaiting a network response etc.
 
-See more:
+### Further reading
 
 - <https://kentcdodds.com/blog/unit-vs-integration-vs-e2e-tests>
 
