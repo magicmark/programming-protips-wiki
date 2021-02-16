@@ -10,11 +10,11 @@ try/catch block to handle the case where the file doesn't exist.
 
 ```js
 function getConfig(configPath) {
-    if (!fs.existsSync(configPath)) {
-        throw new Error(`Could not read config. Expected ${configPath} to exist`);
-    }
+  if (!fs.existsSync(configPath)) {
+    throw new Error(`Could not read config. Expected ${configPath} to exist`);
+  }
 
-    return fs.readFileSync(configPath, 'utf8');
+  return fs.readFileSync(configPath, 'utf8');
 }
 ```
 
@@ -22,14 +22,11 @@ function getConfig(configPath) {
 
 ```js
 function getConfig(configPath) {
-    try {
-        return fs.readFileSync(configPath, 'utf8');
-    } catch (e) {
-        return new AggregateError([
-            `Could not read config file: ${configPath}`,
-            e,
-        ]);
-    }
+  try {
+    return fs.readFileSync(configPath, 'utf8');
+  } catch (e) {
+    return new AggregateError([`Could not read config file: ${configPath}`, e]);
+  }
 }
 ```
 

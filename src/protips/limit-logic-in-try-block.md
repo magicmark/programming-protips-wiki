@@ -9,9 +9,7 @@ Keep the amount of logic in your try/catch blocks to a minimum.
 
 ```js
 try {
-  const config = yaml.safeLoad(
-    fs.readFileSync(path.join(process.cwd(), configFile), 'utf8'),
-  );
+  const config = yaml.safeLoad(fs.readFileSync(path.join(process.cwd(), configFile), 'utf8'));
   const { projectName, scanPaths } = config;
   const resolvedScanPaths = [];
   scanPaths.forEach((scanPath) => {
