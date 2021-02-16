@@ -5,7 +5,9 @@
   "scripts": {
     "build:css": "postcss src/css/tailwind.css > src/css/styles.css",
     "dev": "yarn build:css && eleventy --serve",
-    "build": "NODE_ENV=production yarn build:css && eleventy"
+    "build": "NODE_ENV=production yarn build:css && eleventy",
+    "test": "prettier --check src",
+    "prettier": "prettier --write src"
   },
   "license": "MIT",
   "devDependencies": {
