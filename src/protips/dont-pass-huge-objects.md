@@ -56,7 +56,7 @@ Passing the entire object is bad because:
 
 - It's harder to unit test `getFormattedName` - you'd need to conjure up a whole
   context object in the right structure.
-- We expose `getFormattedName` to lots of other unrelated stuff we doesn't care
+- Generally speaking, we expose `getFormattedName` to lots of other unrelated stuff we don't care
   about. It has to crawl through the context object, and call the
   `context.loaders.user.load` method, violating the [single responsibility
   principle](https://www.google.com/search?q=function+single+responsibility+principle)
