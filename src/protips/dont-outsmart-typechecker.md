@@ -19,7 +19,7 @@ type Movie = {
 async function getMovieRating(id: number): Promise<number> {
   const details: Movie = await fetchMovieDetails(id);
 
-  // @ts-ignore: Type 'number | null' is not assignable to type 'number'
+  // @ts-ignore: rating will always be not null!
   return details.rating;
 }
 ```
