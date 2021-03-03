@@ -44,6 +44,20 @@ async function getMovieRating(id: number): Promise<number> {
 }
 ```
 
+If there really is a bad definition from a library that needs fixing or
+updating, consider pulling the new version of the library or attempting the fix.
+
+If that's something you want to punt on for later, make a ticket or GitHub issue
+and link to it in the comment so other folks can understand why the ignore comment
+is being used, and when it can be removed.
+
+e.g.
+
+```js
+// $FlowFixMe: MYJIRA-1234 foo exists in the bar object, but the typedefs for MyBarLibrary aren't up to date yet. 
+const { foo } = bar;
+```
+
 ## Why?
 
 When the type checker complains about an issue, it's probably correct. In most
