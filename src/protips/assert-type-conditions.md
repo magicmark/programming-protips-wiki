@@ -1,5 +1,5 @@
 ---
-title: Don't try and outsmart the typechecker: Use assertions for possibly null values
+title: Don't try and outsmart the typechecker\: Use assertions for possibly null values
 tags: ['types']
 ---
 
