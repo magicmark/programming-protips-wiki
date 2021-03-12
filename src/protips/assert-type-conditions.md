@@ -1,12 +1,12 @@
 ---
-title: Don't try and outsmart the typechecker\: Use assertions for possibly null values
+title: Use assertions for possibly null values
 tags: ['types']
 ---
 
 Use `assert` or `if` statements to _refine_ a type when passing a possibly null
 or undefined value to a function.
 
-_This is a subset problem of ["don't try and outsmart the typechecker"](/dont-outsmart-typechecker/)._
+This is a subset problem of ["don't try and outsmart the typechecker"](/dont-outsmart-typechecker/).
 
 **Bad Example**
 
@@ -78,13 +78,13 @@ There's no real proof or guarantee the code will behave the way you expect - jus
 your word for it. The best way to guarantee this expectation is to enforce it via
 the code.
 
-This allows us to:
+The benefits here are:
 
-- provide a runtime check in case the expectation is violated, forcing the code
+- provides a runtime check in case the expectation is violated, forcing the code
   to do the right thing rather than failing silently
 - provides a regression test to prevent this expectation from changing over time
   as the codebase evolves
-- remove the need to manually override the typechecker
+- removes the need to manually override the typechecker
 
 ### Further reading
 
