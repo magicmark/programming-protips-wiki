@@ -14,7 +14,7 @@ _This is a subset problem of ["don't try and outsmart the typechecker"](/dont-ou
 type User = {
     name: string
     // user may or may not have saved their favorite food preferences.
-    favoriteFoods?: Array<string>    
+    favoriteFoods?: Array<string>
 };
 
 /**
@@ -38,13 +38,13 @@ function getMenu(user: User): Menu {
 import invariant from 'assert';
 
 function getMenu(user: User): Menu {
-    invariant(Array.isArray(user.favoriteFoods), 'expected favoriteFoods to be set!');
-    const mealItems = getLunchMenu(user.favoriteFoods);
+  invariant(Array.isArray(user.favoriteFoods), 'expected favoriteFoods to be set!');
+  const mealItems = getLunchMenu(user.favoriteFoods);
 
-    return {
-        name: 'lunch',
-        items: mealItems
-    };
+  return {
+    name: 'lunch',
+    items: mealItems,
+  };
 }
 ```
 
@@ -52,16 +52,16 @@ or
 
 ```js
 function getMenu(user: User): Menu {
-    if (!Array.isArray(user.favoriteFoods)) {
-        throw new Error('expected favoriteFoods to be set!');
-    }
+  if (!Array.isArray(user.favoriteFoods)) {
+    throw new Error('expected favoriteFoods to be set!');
+  }
 
-    const mealItems = getLunchMenu(user.favoriteFoods);
+  const mealItems = getLunchMenu(user.favoriteFoods);
 
-    return {
-        name: 'lunch',
-        items: mealItems
-    };
+  return {
+    name: 'lunch',
+    items: mealItems,
+  };
 }
 ```
 

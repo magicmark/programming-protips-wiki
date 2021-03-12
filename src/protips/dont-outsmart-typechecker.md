@@ -54,7 +54,7 @@ is being used, and when it can be removed.
 e.g.
 
 ```js
-// $FlowFixMe: MYJIRA-1234 foo exists in the bar object, but the typedefs for MyBarLibrary aren't up to date yet. 
+// $FlowFixMe: MYJIRA-1234 foo exists in the bar object, but the typedefs for MyBarLibrary aren't up to date yet.
 const { foo } = bar;
 ```
 
