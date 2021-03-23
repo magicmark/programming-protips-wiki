@@ -42,8 +42,6 @@ app.use(function (req, res, next) {
 });
 ```
 
-## Why?
-
 Our middleware has an implicit dependency on someone else, somewhere else, in the
 application setting values for `res.locals.logicStart` and `res.locals.logicEnd`.
 
@@ -58,7 +56,7 @@ We'd never get an error, and it would be hard to notice this! 😱
 
 The type checker is generally much smarter than us dumb humans :)
 
-## Takeaway
+## Why
 
 When the type checker complains about an issue, it's probably correct. In most
 cases, it's warning you about a potential runtime error. In this case, perhaps
