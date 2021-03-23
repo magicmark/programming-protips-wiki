@@ -73,7 +73,7 @@ it can't find the types for an imported module. In such cases, it's usually wort
 spending some time trying to debug the issue. Popular type checkers such as Flow
 and TypeScript are well battle-tested - most error scenarios you could run into
 have probably been discussed before. You may be able to solve it with a quick
-[googling of the stack trace](how-to-google), searching StackOverflow etc - and
+[googling of the stack trace][how-to-google], searching StackOverflow etc - and
 avoid the nasty `@ts-ignore`!
 
 [how-to-google]: https://dev.to/swyx/how-to-google-your-errors-2l6o
