@@ -62,9 +62,8 @@ When the type checker complains about an issue, it's probably correct. In most
 cases, it's warning you about a potential runtime error. In this case, perhaps
 the movie hasn't been released yet, and therefore hasn't been assigned a rating.
 
-In general, we can't "trust" data that comes from "the outside world" - e.g.
-the network, parsing files on disk etc. Using [guards][guards] or [schemas](ajv)
-may help here.
+In general, we can't "trust" data that comes from "the outside world" (the network,
+parsing files on disk etc). Using [guards][guards] or [schemas](ajv) may help here.
 
 [guards]: /return-early/
 [ajv]: https://github.com/ajv-validator/ajv
