@@ -35,6 +35,9 @@ and type checkers etc to tell us _why_ it's being silenced.
 // eslint-disable-next-line no-alert
 ```
 
+If your project uses a bug tacker or GitHub issues, creating and linking to a
+ticket in the description where appropriate is a good idea.
+
 ## Why?
 
 Without a description, it may not be obvious to the reader of the code why the
