@@ -1,4 +1,5 @@
 # For posts that we renamed
 
-/only-pass-what-you-need    /dont-pass-huge-objects
-/silencing-typechecker      /dont-outsmart-typechecker
+/only-pass-what-you-need        /dont-pass-huge-objects
+/silencing-typechecker          /dont-outsmart-typechecker
+/add-suppression-descriptions   /give-reason-for-suppression
