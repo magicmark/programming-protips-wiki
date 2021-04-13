@@ -1,10 +1,10 @@
 ---
-title: Add descriptions to suppression statements
+title: Give a reason when using suppression statements
 tags: ['types', 'linter']
 ---
 
 Add a description to suppression statements used to silence warnings from linters
-and type checkers etc to tell us _why_ it's being silenced.
+and type checkers to tell us _why_ it's being silenced.
 
 **Bad Examples**
 
