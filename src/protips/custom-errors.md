@@ -105,9 +105,9 @@ function main(movieName) {
 
 However, this suffers from [limit-what-you-catch](../limit-what-you-catch/).
 
-_(There are many things that could potentially throw inside `getMovieRating`,
+There are many things that could potentially throw inside `getMovieRating`,
 such as the request in `fetchMovieDetails`, or the property traversal of the
-result object.)_
+result object.
 
 In the first example, **there's no great way to catch this error specifically**
 since it throws a generic error.
