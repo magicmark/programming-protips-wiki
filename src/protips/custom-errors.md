@@ -3,12 +3,9 @@ title: Use custom errors for error handling and control flow
 tags: ['error-handling']
 ---
 
-When throwing errors from our own code, it's usually best to do so with a custom
-error class.
-
-If you're explicitly throwing an error, that means it's a "known" error state -
-like a bad input or response to something, and we can assume that the calling
-code may want to handle that "known" state in a specific way.
+If we're explicitly throwing an error, that usually indicates it's a "known"
+error state - for example, disallowing a bad user input. We can assume that
+the calling code may want to handle these error states in a specific way.
 
 It's especially important for reusable library code to do this, where we may not
 be able to anticipate how callsites will need to handle errors from the library.
