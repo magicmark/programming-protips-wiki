@@ -36,7 +36,8 @@ and type checkers to tell us _why_ it's being silenced.
 ```
 
 If your project uses a bug tacker or GitHub issues, creating and linking to a
-ticket in the description where appropriate is a good idea.
+ticket in the description where appropriate is a good idea. Include a sample
+stack trace so readers can understand the failure case, and that it's searchable.
 
 ## Why?
 
