@@ -121,8 +121,8 @@ If there really is a bad definition from a library that needs fixing or
 updating, consider pulling the new version of the library or attempting the fix.
 
 If that's something you want to punt on for later, make a ticket or GitHub issue
-and link to it in the comment so other folks can understand why the ignore comment
-is being used, and when it can be removed.
+that includes a sample stack trace, and link to it in the comment so other folks
+can understand why the ignore comment is being used, and when it can be removed.
 
 e.g.
 
