@@ -18,7 +18,7 @@ https://github.com/facebook/react/blob/master/packages/react/src/ReactElement.js
 https://github.com/facebook/react/blob/ea155e2267b3/packages/react/src/ReactElement.js#L54
 ```
 
-::: note 💡 Tip: Short Git Links
+::: note 💡 Tip: Shorter Git Links
 
 Git SHAs can be shortened to just a few characters. So this:
 
