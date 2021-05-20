@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    content: ['./src/**/*.html', './src/**/*.njk'],
+    content: ['.eleventy.js', './src/**/*.html', './src/**/*.njk', './src/**/*.css'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {

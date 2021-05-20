@@ -20,6 +20,29 @@ module.exports = function (eleventyConfig) {
     return util.inspect(value);
   });
 
+  const markdownIt = require('markdown-it');
+  const markdownItContainer = require('markdown-it-container');
+  const markdownLib = markdownIt({
+    html: true,
+  }).use(markdownItContainer, 'note', {
+    render: (tokens, idx) => {
+      console.log(tokens[idx])
+      if (tokens[idx].type === 'container_note_open') {
+        const suffix = tokens[idx].info.replace(/\s*note\s*/, '');
+        const heading = suffix === '' ? '📝 Note' : suffix;
+  
+        return `
+          <div class="note border-l-4 border-yellow-200 rounded-lg bg-yellow-100 p-4">
+            <div class="text-gray-700 text-sm font-semibold -mb-2 pb-3 border-yellow-400 border-b">${heading}</div>
+        `;
+      } else {
+        return '</div>';
+      }
+    },
+  });
+
+  eleventyConfig.setLibrary('md', markdownLib);
+
   return {
     dir: {
       input: 'src',
