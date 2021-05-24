@@ -41,7 +41,7 @@ function getConfigOption(filePath, key) {
 By returning (or throwing!) early, we reduce the level of nesting for the rest of
 the function, improving readability.
 
-You can write multiple guards at the top of the function when checking inputs:
+You can write multiple guards at the top of the function:
 
 ```js
 function getConfigOption(filePath, key) {
