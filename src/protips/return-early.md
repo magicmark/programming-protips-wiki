@@ -13,16 +13,11 @@ condition(s), consider returning early.
 **Bad Example**
 
 ```js
-function parseConfigFile(filePath) {
+function getConfigOption(filePath, key) {
   if (typeof filePath === 'string') {
     const contents = fs.readFileSync(filePath, 'utf8');
     const configJson = JSON.parse(contents);
-    const { projectName } = configJson;
-    // ...
-    // ...
-    // ... more function logic
-    // ...
-    return configJson;
+    return configJson[key];
   } else {
     throw new Error('No config file path was supplied');
   }
@@ -32,27 +27,32 @@ function parseConfigFile(filePath) {
 **Prefer**
 
 ```js
-function parseConfigFile(filePath) {
+function getConfigOption(filePath, key) {
   if (!filePath) {
     throw new Error('No config file path was supplied');
   }
 
   const contents = fs.readFileSync(filePath, 'utf8');
   const configJson = JSON.parse(contents);
-  const { projectName } = configJson;
-  // ...
-  // ...
-  // ... more function logic
-  // ...
-  return configJson;
+  return configJson[key];
 }
 ```
 
 By returning (or throwing!) early, we reduce the level of nesting for the rest of
 the function, improving readability.
 
-You can write multiple guards (not _too_ many!) at the top of the function when
-checking inputs.
+You can write multiple guards at the top of the function when checking inputs:
+
+```js
+function getConfigOption(filePath, key) {
+  assert(typeof filePath === 'string', 'config file path must be supplied');
+  assert(typeof key === 'string', 'config key must be supplied');
+
+  const contents = fs.readFileSync(filePath, 'utf8');
+  const configJson = JSON.parse(contents);
+  return configJson[key];
+}
+```
 
 **Note:** This doesn't advocate for randomly returning in the _middle_ of a
 function - which would be somewhat chaotic :)
