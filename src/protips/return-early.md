@@ -59,5 +59,6 @@ function - which would be somewhat chaotic :)
 
 Further reading:
 
+- <https://wiki.c2.com/?GuardClause>
 - <https://forum.freecodecamp.org/t/the-return-early-pattern-explained-with-javascript-examples/19364>
 - <https://www.google.com/search?q=return+early>
