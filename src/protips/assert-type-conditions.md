@@ -10,17 +10,7 @@ This is a subset problem of ["don't try and outsmart the typechecker"](/dont-out
 
 **Bad Example**
 
-```js
-type User = {
-    name: string
-    // user may or may not have saved their favorite food preferences.
-    favoriteFoods?: Array<string>
-};
-
-/**
- * Return the menu for the day. Should only be called when a user has set their
- * favorite foods preferences.
- */
+```jsx
 function getMenu(user: User): Menu {
     // $FlowFixMe: user.favoriteFood should always be set!
     const mealItems = getLunchMenu(user.favoriteFoods);
@@ -34,7 +24,7 @@ function getMenu(user: User): Menu {
 
 **Prefer**
 
-```js
+```jsx
 import invariant from 'assert';
 
 function getMenu(user: User): Menu {
