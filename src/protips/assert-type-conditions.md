@@ -12,13 +12,13 @@ This is a subset problem of ["don't try and outsmart the typechecker"](/dont-out
 
 ```jsx
 function getMenu(user: User): Menu {
-    // $FlowFixMe: user.favoriteFood should always be set!
-    const mealItems = getLunchMenu(user.favoriteFoods);
+  // $FlowFixMe: user.favoriteFood should always be set!
+  const mealItems = getLunchMenu(user.favoriteFoods);
 
-    return {
-        name: 'lunch',
-        items: mealItems
-    };
+  return {
+    name: 'lunch',
+    items: mealItems
+  };
 }
 ```
 
