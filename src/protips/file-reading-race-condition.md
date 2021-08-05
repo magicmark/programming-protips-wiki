@@ -39,6 +39,11 @@ file and reading it.
 This general coding style is known as ["Easier to ask for forgiveness than
 permission" (EAFP)](https://docs.python.org/3.5/glossary.html#term-eafp).
 
+(Even if you think it's not a problem for your one-off build script today, it
+could still be a problem if folks run multiple commands at once from multiple
+windows, or someone later decides to throw xargs around your script. Concurrency
+can lead to stuff being deleted/read at the same time.)
+
 ### Further reading
 
 - <https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use>
