@@ -12,21 +12,29 @@ chain the original error to preserve its stack trace in the output.
 try {
     doSomethingCool();
 } catch (err) {
-    throw new Error('Yikes! Failed to do anything cool :(')
+    throw new Error('Yikes! Failed to do anything cool :(');
 }
 ```
 
 **Prefer**
 
 ```js
-import AggregateError from 'aggregate-error';
+import { ErrorWithCause } from 'pony-cause';
 
 try {
     doSomethingCool();
 } catch (err) {
-    throw new AggregateError(['Yikes! Failed to do anything cool :(', err])
+    throw new ErrorWithCause('Yikes! Failed to do anything cool :(', { cause: err });
 }
 ```
+
+_Note: Support for
+[`.cause` has been added to the JS `Error` spec][proposal-error-cause].  If
+you're running in a modern environment, you can just use that - but you'll have
+to do your own handling and printing to show the full combined stack trace (same
+with VError)._
+
+[proposal-error-cause]: (https://github.com/tc39/proposal-error-cause) 
 
 ## Why?
 
@@ -43,6 +51,8 @@ combined error including the underlying error object if applicable.
 (This is also known as "exception chaining" in Python.)
 
 Resources for chaining errors:
-- [JS] <https://github.com/sindresorhus/aggregate-error>
+- [JS] <https://github.com/tc39/proposal-error-cause>
+- [JS] <https://github.com/voxpelli/pony-cause>
 - [JS] <https://github.com/joyent/node-verror>
+- [JS] <https://github.com/sindresorhus/aggregate-error>
 - [Python] <https://docs.python.org/3/tutorial/errors.html#exception-chaining>
