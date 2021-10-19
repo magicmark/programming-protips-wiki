@@ -18,23 +18,40 @@ try {
 
 **Prefer**
 
+If you don't want to do extra error handling to print the full stack trace,
+and want something that "just works" (for one-off scripts):
+
 ```js
-import { ErrorWithCause } from 'pony-cause';
+import ono from '@jsdevtools/ono';
 
 try {
     doSomethingCool();
 } catch (err) {
-    throw new ErrorWithCause('Yikes! Failed to do anything cool :(', { cause: err });
+    throw ono(err, 'Yikes! Failed to do anything cool :(');
 }
 ```
 
-_Note: Support for
-[`.cause` has been added to the JS `Error` spec][proposal-error-cause].  If
-you're running in a modern environment, you can just use that - but you'll have
-to do your own handling and printing to show the full combined stack trace (same
-with VError)._
+If you don't want extra libraries and want to use the new [built-in][error-cause]
+spec, then you do this:
 
-[proposal-error-cause]: (https://github.com/tc39/proposal-error-cause) 
+[error-cause]: https://github.com/tc39/proposal-error-cause
+
+
+```js
+try {
+    doSomethingCool();
+} catch (err) {
+    throw new Error('Yikes! Failed to do anything cool :(', { cause: err });
+}
+```
+
+Note: By default this will just print the last trace to the console - you'll
+need to do a top-level catch-all clause and format the combined stack trace
+to view the full trace (similar to [VError.fullStack()][verror]. If you don't
+want to set this up, use something like [ono][ono] as shown above.
+
+[verror]: https://github.com/joyent/node-verror#verrorfullstackerr
+[ono]: https://github.com/JS-DevTools/ono
 
 ## Why?
 
@@ -53,6 +70,7 @@ combined error including the underlying error object if applicable.
 Resources for chaining errors:
 - [JS] <https://github.com/tc39/proposal-error-cause>
 - [JS] <https://github.com/voxpelli/pony-cause>
+- [JS] <https://github.com/JS-DevTools/ono>
 - [JS] <https://github.com/joyent/node-verror>
 - [JS] <https://github.com/sindresorhus/aggregate-error>
 - [Python] <https://docs.python.org/3/tutorial/errors.html#exception-chaining>
