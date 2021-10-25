@@ -6,10 +6,11 @@ tags: ['types', 'linter']
 Add a description to suppression statements used to silence warnings from linters
 and type checkers to show us _why_ it's being silenced.
 
-Give us enough information to verify. Comments like "x is wrong" without any detail
-means we have to trust humans, and aren't able to easily verify over time if that
-assumption has changed. Link to a stack trace in a JIRA ticket or pastebin if
-appropriate.
+If the typechecker is failing, that must mean either:
+1) The code is buggy, or the typechecker/linter itself is buggy. In either case, please file a ticket and link to it.
+2) The typechecker is correct, but it's a confusing error message, and we just need to debug more.
+
+A comment like "x is wrong" is almost never sufficient - if it really is wrong, please file a bug report and link to it!
 
 **Bad Examples**
 
