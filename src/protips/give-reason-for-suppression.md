@@ -10,7 +10,7 @@ If the typechecker is failing, that must mean either:
 1) The code is buggy, or the typechecker/linter itself is buggy. If this is the case, see if someone has already reported this issue (if not, file an issue).
 2) The typechecker is correct, but it's a confusing error message, and we just need to debug more.
 
-A comment like "x is wrong" is almost never sufficient - if it really is wrong, please file a bug report and link to it!
+For Flow/TypeScript especially, a comment like "x is wrong" is almost never sufficient - if it really is wrong, please file a bug report and link to it in the comment :)
 
 **Bad Examples**
 
