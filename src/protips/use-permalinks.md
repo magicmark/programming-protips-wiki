@@ -6,6 +6,16 @@ tags: []
 When linking to a file or line of code on GitHub, SourceGraph, include the SHA to
 make it a permalink.
 
+## Why?
+
+Source code changes over time, and line numbers may change. The file you're
+linking to may even be deleted! In order to ensure that your link works over
+time, **always use permalinks where available**.
+
+Even if it's only a comment in JIRA or a quick slack message, it's still
+good practice to get in the habit of always copying permalinks. You never know
+when you might need to go back and reference a link you posted a while ago.
+
 **Bad Example**
 
 ```text
@@ -30,13 +40,3 @@ can be condensed to
 
 See more: <https://stackoverflow.com/a/18134919/4396258>
 :::
-
-## Why?
-
-Source code changes over time, and line numbers may change. The file you're
-linking to may even be deleted! In order to ensure that your link works over
-time, **always use permalinks where available**.
-
-Even if it's only a comment in JIRA or a quick slack message, it's still
-good practice to get in the habit of always copying permalinks. You never know
-when you might need to go back and reference a link you posted a while ago.
