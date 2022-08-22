@@ -1,4 +1,4 @@
 [build]
   publish = "public/"
   command = "make build"
-  environment = { NODE_VERSION = "16.x" }
+  environment = { NODE_VERSION = "16.17.0" }
