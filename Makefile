@@ -4,6 +4,7 @@ node_modules: package.json yarn.lock
 src/css/dracula.css:
 	curl https://raw.githubusercontent.com/dracula/highlightjs/master/dracula.css > src/css/dracula.css
 
+build: export NODE_ENV = "production"
 build: node_modules src/css/dracula.css
 	yarn build
 	cp _redirects public/_redirects

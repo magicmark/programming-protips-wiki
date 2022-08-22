@@ -1,6 +1,6 @@
 ---
 title: Give a reason when using suppression statements
-tags: ['types', 'linter']
+tags: ['typechecker', 'linter', 'supression-statements']
 ---
 
 Add a description to suppression statements used to silence warnings from linters
@@ -12,7 +12,7 @@ If the typechecker is failing, that must mean either:
 
 For Flow/TypeScript especially, a comment like "x is wrong" is almost never sufficient - if it really is wrong, please file a bug report and link to it in the comment :)
 
-**Bad Examples**
+**❌ &nbsp;Bad:**
 
 ```js
 // $FlowFixMe
@@ -30,7 +30,7 @@ For Flow/TypeScript especially, a comment like "x is wrong" is almost never suff
 // eslint-disable-next-line no-alert
 ```
 
-**Prefer**
+**✅ &nbsp;Good:**
 
 ```js
 // $FlowFixMe: The typings for this method are out of date. TODO: Use new version when released (MYJIRA-1234)

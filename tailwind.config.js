@@ -1,11 +1,7 @@
 module.exports = {
-  purge: {
-    content: ['.eleventy.js', './src/**/*.html', './src/**/*.njk', './src/**/*.css'],
-  },
-  darkMode: false, // or 'media' or 'class'
+  content: ['.eleventy.js', './src/**/*.html', './src/**/*.njk', './src/**/*.css'],
   theme: {
     extend: {},
   },
-  variants: {},
   plugins: [require('@tailwindcss/typography')],
 };

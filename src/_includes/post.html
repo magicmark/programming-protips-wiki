@@ -2,64 +2,42 @@
 layout: base.html
 ---
 
-<div class="flex flex-col space-y-4 mb-8">
-  <div class="flex -mt-2">
-    <a
-      href="/"
-      class="text-gray-400 hover:bg-gray-200 transition duration-75 flex space-x-2 items-center rounded-lg -ml-3 p-3"
-    >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-      </svg>
-
-      <span class="text-gray-500">View more protips</span>
-    </a>
+<div
+  class=" shadow mb-8 w-full bg-sky-100 font-mono bg-opacity-50 rounded text-sm outline-none text-gray-600 p-3 flex items-center justify-between">
+  <div>
+    <span>https://programming.protips.wiki</span><span class="text-gray-700 font-bold">/{{ page.fileSlug }}</span>
   </div>
-
-  <div class="flex flex-col">
-    <div class="flex">
-      <button id="copy-link" class="text-sm text-left mb-2 text-indigo-400">Copy link to this page</button>
-    </div>
-    <div class="flex space-x-2 items-center">
-      <input
-        type="text"
-        readonly
-        value="https://programming.protips.wiki/{{ page.fileSlug }}"
-        class="w-full bg-gray-100 font-mono bg-opacity-50 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 text-sm lg:text-lg font-bold focus:border-indigo-500 outline-none text-gray-600 py-1 px-3 leading-8 lg:py-3 lg:px-5"
-      />
-    </div>
-  </div>
+  <button id="copy-link" class="text-indigo-400 font-sans ">Copy link to this page</button>
 </div>
 
-<div class="prose prose-indigo max-w-none break-words">
-  <h1>{{title}}</h1>
-  <div class="-mt-6 text-gray-600 flex space-x-2 font-light">
-    {%- for tag in tags %}
-    <span class="text-base lg:text-lg">#{{ tag }}</span>
-    {%- endfor %}
-  </div>
-  {{ content | safe }}
+<div class="text-gray-600 flex space-x-2 font-light mb-2">
+  {%- for tag in tags %}
+  <span class="text-base">#{{ tag }}</span>
+  {%- endfor %}
 </div>
+
+<article class="prose max-w-none break-words">
+  <h1 class="text-xl">{{title}}</h1>
+  {{ content }}
+</article>
 
 <style type="text/css">
   code {
     overflow-wrap: initial;
     overflow-x: scroll;
   }
+
 </style>
 
 <div class="border-t mt-8 pt-4">
-  <a
-    class="text-indigo-400 hover:underline"
-    href="https://github.com/magicmark/programming-protips-wiki/edit/master/src/protips/{{ page.fileSlug }}.md"
-    >Help us improve this page! Edit <span class="font-mono">{{page.fileSlug}}.md</span> on GitHub.</a
-  >
+  <a class="text-purple-400 hover:underline"
+    href="https://github.com/magicmark/programming-protips-wiki/edit/master/src/protips/{{ page.fileSlug }}.md">Edit <span class="font-mono">{{page.fileSlug}}.md</span> on GitHub.</a>
 </div>
 
 <script>
   document.querySelector('#copy-link').addEventListener('click', () => {
     navigator.clipboard.writeText('https://programming.protips.wiki/{{ page.fileSlug }}').then(() => {
-      document.querySelector('#copy-link').innerText = 'Copy link to this page - saved to clipboard!';
+      document.querySelector('#copy-link').innerText = 'Copied!';
     });
   });
 </script>
