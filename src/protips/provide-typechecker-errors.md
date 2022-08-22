@@ -38,6 +38,6 @@ This implies that if we're turning off the typechecker, it's either:
 2. we're simply turning it off for this line because it's complex to resolve
 
 Either way, **you should always copy and paste the error message from the typechecker**, so your code reviewer can
-confirm that your error fits the reason given for (1), or help provide a fix in code to help resolve (2).
+confirm that your error fits the reason given for (1), or help provide a fix in code to resolve (2).
 
 [give-reason]: /give-reason-for-suppression
