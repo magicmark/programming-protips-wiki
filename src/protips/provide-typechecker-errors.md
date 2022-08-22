@@ -25,7 +25,7 @@ Your code reviewer can't easily run your code to see what the actual error was. 
 the typechecker produced. Either:
 
 - copy and paste it as an inline comment in Github (or whatever code review tool you use)
-- copy and  paste it into a public pastebin (e.g. [fluffy.cc](fluffy.cc)) and link to it in-code in the supression statement comment
+- copy and paste it into a public pastebin (e.g. [fluffy.cc](fluffy.cc)) and link to it in-code in the supression statement comment
 
 Using a supression statement, especially for typecheckers, is a [code smell](http://wiki.c2.com/?CodeSmell). Something
 has gone wrong if we're resorting to using one, and it usually indicates that something somewhere _else_ needs to be

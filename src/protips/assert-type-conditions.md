@@ -17,7 +17,7 @@ function getMenu(user: User): Menu {
 
   return {
     name: 'lunch',
-    items: mealItems
+    items: mealItems,
   };
 }
 ```

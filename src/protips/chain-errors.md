@@ -10,9 +10,9 @@ chain the original error to preserve its stack trace in the output.
 
 ```js
 try {
-    doSomethingCool();
+  doSomethingCool();
 } catch (err) {
-    throw new Error('Yikes! Failed to do anything cool :(');
+  throw new Error('Yikes! Failed to do anything cool :(');
 }
 ```
 
@@ -25,9 +25,9 @@ and want something that "just works" (for one-off scripts):
 import ono from '@jsdevtools/ono';
 
 try {
-    doSomethingCool();
+  doSomethingCool();
 } catch (err) {
-    throw ono(err, 'Yikes! Failed to do anything cool :(');
+  throw ono(err, 'Yikes! Failed to do anything cool :(');
 }
 ```
 
@@ -36,12 +36,11 @@ spec, then you do this:
 
 [error-cause]: https://github.com/tc39/proposal-error-cause
 
-
 ```js
 try {
-    doSomethingCool();
+  doSomethingCool();
 } catch (err) {
-    throw new Error('Yikes! Failed to do anything cool :(', { cause: err });
+  throw new Error('Yikes! Failed to do anything cool :(', { cause: err });
 }
 ```
 
@@ -63,11 +62,10 @@ ever seeing it.
 Sometimes we want to throw [custom errors][custom-errors] - remember to throw a
 combined error including the underlying error object if applicable.
 
-[custom-errors]: https://programming.protips.wiki/custom-errors/
-
-(This is also known as "exception chaining" in Python.)
+[custom-errors]: https://programming.protips.wiki/custom-errors/ 'This is also known as "exception chaining" in Python.'
 
 Resources for chaining errors:
+
 - [JS] <https://github.com/tc39/proposal-error-cause>
 - [JS] <https://github.com/voxpelli/pony-cause>
 - [JS] <https://github.com/JS-DevTools/ono>
