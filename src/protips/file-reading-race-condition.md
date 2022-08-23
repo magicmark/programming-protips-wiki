@@ -6,7 +6,7 @@ tags: ['file-system', 'error-handling', 'race-condition']
 Don't check if a file exists before reading it - just read it, and use a
 try/catch block to handle the case where the file doesn't exist.
 
-**Bad Example**
+::: bad :::
 
 ```js
 function getConfig(configPath) {
@@ -18,7 +18,7 @@ function getConfig(configPath) {
 }
 ```
 
-**Prefer**
+::: good :::
 
 ```js
 function getConfig(configPath) {

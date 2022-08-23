@@ -5,7 +5,7 @@ tags: ['testing']
 
 Don't make network requests in unit tests.
 
-**Bad Example**
+::: bad :::
 
 ```js
 function logEvent(event, payload) {
@@ -25,7 +25,7 @@ function rollDice() {
 expect(rollDice()).toBeLessThanOrEqual(6);
 ```
 
-**Prefer**
+::: good :::
 
 ```js
 function rollDice(_logEvent = logEvent) {

@@ -12,7 +12,7 @@ layer in a request took:
 
 [express]: https://expressjs.com/
 
-**Bad Example**
+::: bad :::
 
 ```js
 app.use(function (req, res, next) {
@@ -26,7 +26,7 @@ app.use(function (req, res, next) {
 });
 ```
 
-**Prefer**
+::: good :::
 
 ```js
 app.use(function (req, res, next) {

@@ -8,7 +8,7 @@ or undefined value to a function.
 
 This is a subset problem of ["don't try and outsmart the typechecker"](/dont-outsmart-typechecker/).
 
-**Bad Example**
+::: bad :::
 
 ```jsx
 function getMenu(user: User): Menu {
@@ -22,7 +22,7 @@ function getMenu(user: User): Menu {
 }
 ```
 
-**Prefer**
+::: good :::
 
 ```jsx
 import invariant from 'assert';

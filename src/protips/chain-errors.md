@@ -6,7 +6,7 @@ tags: ['error-handling']
 Don't gobble up underlying errors when (re)throwing a custom error. Instead,
 chain the original error to preserve its stack trace in the output.
 
-**Bad Example**
+::: bad :::
 
 ```js
 try {
@@ -16,7 +16,7 @@ try {
 }
 ```
 
-**Prefer**
+::: good :::
 
 If you don't want to do extra error handling to print the full stack trace,
 and want something that "just works" (for one-off scripts):

@@ -13,7 +13,7 @@ If the typechecker is failing, that must mean either:
 
 For Flow/TypeScript especially, a comment like "x is wrong" is almost never sufficient - if it really is wrong, please file a bug report and link to it in the comment :)
 
-**❌ &nbsp;Bad:**
+::: bad :::
 
 ```js
 // $FlowFixMe
@@ -31,7 +31,7 @@ For Flow/TypeScript especially, a comment like "x is wrong" is almost never suff
 // eslint-disable-next-line no-alert
 ```
 
-**✅ &nbsp;Good:**
+::: good :::
 
 ```js
 // $FlowFixMe: The typings for this method are out of date. TODO: Use new version when released (MYJIRA-1234)

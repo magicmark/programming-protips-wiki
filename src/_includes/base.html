@@ -8,8 +8,22 @@
     <title>{{ title }}</title>
   </head>
   <body>
+    <!-- <div class="sticky z-50 top-2 left-2 max-w-xs text-gray-900 bg-gray-50">
+      <p class="p-2 text-xs">
+        Breakpoint:
+        <span class="sm:hidden">mobile</span>
+        <span class="hidden sm:inline md:hidden">sm</span>
+        <span class="hidden md:inline lg:hidden">md</span>
+        <span class="hidden lg:inline xl:hidden">lg</span>
+        <span class="hidden xl:inline 2xl:hidden">xl</span>
+        <span class="hidden 2xl:inline 3xl:hidden">2xl</span>
+        <span class="hidden 3xl:inline 4xl:hidden">3xl</span>
+        <span class="hidden 4xl:inline">4xl+</span>
+      <p>
+    </div> -->
+
     <header class="text-gray-600 body-font border-b-2">
-      <div class="max-w-screen-lg mx-auto flex justify-between p-6 flex-col md:flex-row">
+      <div class="max-w-[90rem] mx-auto flex justify-between p-6 flex-col md:flex-row">
         <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
           <svg
             class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
@@ -42,7 +56,7 @@
         </div>
       </div>
     </header>
-    <div class="max-w-screen-lg mx-auto p-6">
+    <div class="max-w-[90rem] mx-auto p-6">
       <main>{{ content }}</main>
     </div>
 

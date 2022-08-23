@@ -15,7 +15,7 @@ handle different kinds of errors differently.
 
 _(This pairs well with [limit-what-you-catch](../limit-what-you-catch/))._
 
-**Bad Example**
+::: bad :::
 
 ```javascript
 // Map movie name to id
@@ -37,7 +37,7 @@ function getMovieRating(name) {
 }
 ```
 
-**Prefer**
+::: good :::
 
 ```typescript
 // Map movie name to id

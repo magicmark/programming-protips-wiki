@@ -10,7 +10,7 @@ condition(s), consider returning early.
 
 [guard]: https://en.wikipedia.org/wiki/Guard_(computer_science)
 
-**Bad Example**
+::: bad :::
 
 ```js
 function getConfigOption(filePath, key) {
@@ -24,7 +24,7 @@ function getConfigOption(filePath, key) {
 }
 ```
 
-**Prefer**
+::: good :::
 
 ```js
 function getConfigOption(filePath, key) {

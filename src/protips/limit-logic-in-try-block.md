@@ -5,7 +5,7 @@ tags: ['error-handling']
 
 Keep the amount of logic in your try/catch blocks to a minimum.
 
-**Bad Example**
+::: bad :::
 
 ```js
 try {
@@ -24,7 +24,7 @@ try {
 }
 ```
 
-**Prefer**
+::: good :::
 
 ```js
 let config;

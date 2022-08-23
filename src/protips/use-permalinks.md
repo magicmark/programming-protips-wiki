@@ -16,13 +16,13 @@ Even if it's only a comment in JIRA or a quick slack message, it's still
 good practice to get in the habit of always copying permalinks. You never know
 when you might need to go back and reference a link you posted a while ago.
 
-**Bad Example**
+::: bad :::
 
 ```text
 https://github.com/facebook/react/blob/master/packages/react/src/ReactElement.js#L54
 ```
 
-**Prefer**
+::: good :::
 
 ```text
 https://github.com/facebook/react/blob/ea155e2267b3/packages/react/src/ReactElement.js#L54

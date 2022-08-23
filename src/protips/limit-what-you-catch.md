@@ -5,7 +5,7 @@ tags: ['error-handling']
 
 Be specific when catching an error. Re-throw all other errors.
 
-**Bad Example**
+::: bad :::
 
 ```js
 try {
@@ -15,7 +15,7 @@ try {
 }
 ```
 
-**Prefer**
+::: good :::
 
 ```js
 try {

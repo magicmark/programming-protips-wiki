@@ -3,14 +3,14 @@ title: Copy and paste the error message from the typechecker (e.g. TypeScript, F
 tags: ['typechecker', 'supression-statements']
 ---
 
-**❌ &nbsp;Bad:**
+::: bad :::
 
 ```js
 // $FlowFixMe: Ignoring this because `greeting` isn't actually null
 sayHello(greeting);
 ```
 
-**✅ &nbsp;Good:**
+::: good :::
 
 ```js
 // $FlowFixMe: Flow thinks `greeting` is null, but it isn't (https://i.fluffy.cc/bsJdpV7pq69PFvX0sCJplgdGxFwqJTHH)

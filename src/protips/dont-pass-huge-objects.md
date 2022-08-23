@@ -6,7 +6,7 @@ tags: []
 Avoid passing around huge, monolithic objects around to helper functions. Only
 pass what the function really needs.
 
-**Bad Example**
+::: bad :::
 
 ```typescript
 // A GraphQL 'context' object
@@ -33,7 +33,7 @@ async function getFormattedName(context: Context, id: number): string {
 getFormattedName(context, 4);
 ```
 
-**Prefer**
+::: good :::
 
 ```js
 function getFormattedName(user: User): string {
