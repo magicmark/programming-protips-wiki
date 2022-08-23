@@ -1,5 +1,5 @@
 ---
-title: Copy and paste the error message from the typechecker (e.g. TypeScript, Flow) when using supression statements
+title: Copy and paste error messages from the typechecker when using suppression statements
 tags: ['typechecker', 'supression-statements']
 ---
 
@@ -22,7 +22,7 @@ sayHello(greeting);
 ## Why?
 
 Your code reviewer can't easily run your code to see what the actual error was. Help them by showing them the error that
-the typechecker produced. Either:
+the typechecker (e.g. Flow or TypeScript) produced. Either:
 
 - copy and paste it as an inline comment in Github (or whatever code review tool you use)
 - copy and paste it into a public pastebin (e.g. [fluffy.cc](fluffy.cc)) and link to it in-code in the supression statement comment
