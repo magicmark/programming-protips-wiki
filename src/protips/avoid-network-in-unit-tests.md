@@ -3,8 +3,6 @@ title: Avoid making network requests in unit tests
 tags: ['testing']
 ---
 
-Don't make network requests in unit tests.
-
 ::: bad :::
 
 ```js
