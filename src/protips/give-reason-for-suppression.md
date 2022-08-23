@@ -3,15 +3,7 @@ title: Give a reason when using suppression statements
 tags: ['typechecker', 'linter', 'supression-statements']
 ---
 
-Add a description to suppression statements used to silence warnings from linters
-and type checkers to show us _why_ it's being silenced.
-
-If the typechecker is failing, that must mean either:
-
-1. The code is buggy, or the typechecker/linter itself is buggy. If this is the case, see if someone has already reported this issue (if not, file an issue).
-2. The typechecker is correct, but it's a confusing error message, and we just need to debug more.
-
-For Flow/TypeScript especially, a comment like "x is wrong" is almost never sufficient - if it really is wrong, please file a bug report and link to it in the comment :)
+Add a description to suppression statements telling us why it's being silenced. A comment like "x is wrong" is almost never sufficient (if it really is wrong, please file a bug report and link to it in the comment).
 
 ::: bad :::
 
@@ -48,7 +40,7 @@ For Flow/TypeScript especially, a comment like "x is wrong" is almost never suff
 
 Tips:
 
-- Include a sample stack trace so readers can understand the failure case, and to make it searchable
+- [Include a sample stack trace so readers can understand the failure case, and to make it searchable](https://programming.protips.wiki/provide-typechecker-errors/)
 - If your project uses a bug tacker or GitHub issues, create or link to a ticket in the description
 
 ## Why?
