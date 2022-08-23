@@ -11,13 +11,13 @@ Don't make network requests in unit tests.
 function logEvent(event, payload) {
   fetch('https://logging.internal.mycorp.com/log_event', {
     method: 'POST',
-    body: JSON.stringify({ event, payload }),
+    body: JSON.stringify({ event }),
   });
 }
 
 function rollDice() {
   const result = Math.floor(Math.random() * 6) + 1;
-  logEvent('user_rolled_dice', { date: Date.now() });
+  logEvent('user_rolled_dice');
 
   return result;
 }
@@ -30,7 +30,7 @@ expect(rollDice()).toBeLessThanOrEqual(6);
 ```js
 function rollDice(_logEvent = logEvent) {
   const result = Math.floor(Math.random() * 6) + 1;
-  _logEvent('user_rolled_dice', { date: Date.now() });
+  _logEvent('user_rolled_dice');
 
   return result;
 }
