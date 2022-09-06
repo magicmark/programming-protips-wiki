@@ -6,14 +6,14 @@ tags: ['typechecker', 'supression-statements']
 ::: bad :::
 
 ```js
-// $FlowFixMe: Ignoring this because `greeting` isn't actually null
+// $FlowFixMe: greeting isn't null
 sayHello(greeting);
 ```
 
 ::: good :::
 
 ```js
-// $FlowFixMe: Flow thinks `greeting` is null, but it isn't (https://i.fluffy.cc/bsJdpV7pq69PFvX0sCJplgdGxFwqJTHH)
+// $FlowFixMe: Flow thinks `greeting` is null, but it isn't because xyz (https://example.com/link/to/my/stack/trace)
 sayHello(greeting);
 ```
 
