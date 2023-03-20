@@ -15,7 +15,7 @@ function printMenu({ favoriteFoods }) {
   // $FlowFixMe: favoriteFood should always be set!
   const menu = getMenu(favoriteFoods);
 
-  console.log(`Today's menu is: ${menu}`)
+  console.log(`Today's menu is: ${menu}`);
 }
 ```
 
@@ -28,7 +28,7 @@ function printMenu({ favoriteFoods }) {
   invariant(Array.isArray(favoriteFoods), 'expected favoriteFoods to be set!');
 
   const menu = getMenu(favoriteFoods);
-  console.log(`Today's menu is: ${menu}`)
+  console.log(`Today's menu is: ${menu}`);
 }
 ```
 
@@ -41,7 +41,7 @@ function printMenu({ favoriteFoods }) {
   }
 
   const menu = getMenu(favoriteFoods);
-  console.log(`Today's menu is: ${menu}`)
+  console.log(`Today's menu is: ${menu}`);
 }
 ```
 
