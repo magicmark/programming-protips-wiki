@@ -11,14 +11,11 @@ This is a subset problem of ["don't try and outsmart the typechecker"](/dont-out
 ::: bad :::
 
 ```jsx
-function getMenu(user: User): Menu {
-  // $FlowFixMe: user.favoriteFood should always be set!
-  const mealItems = getLunchMenu(user.favoriteFoods);
+function printMenu({ favoriteFoods }) {
+  // $FlowFixMe: favoriteFood should always be set!
+  const menu = getMenu(favoriteFoods);
 
-  return {
-    name: 'lunch',
-    items: mealItems,
-  };
+  console.log(`Today's menu is: ${menu}`)
 }
 ```
 
@@ -27,31 +24,24 @@ function getMenu(user: User): Menu {
 ```jsx
 import invariant from 'assert';
 
-function getMenu(user: User): Menu {
-  invariant(Array.isArray(user.favoriteFoods), 'expected favoriteFoods to be set!');
-  const mealItems = getLunchMenu(user.favoriteFoods);
+function printMenu({ favoriteFoods }) {
+  invariant(Array.isArray(favoriteFoods), 'expected favoriteFoods to be set!');
 
-  return {
-    name: 'lunch',
-    items: mealItems,
-  };
+  const menu = getMenu(favoriteFoods);
+  console.log(`Today's menu is: ${menu}`)
 }
 ```
 
 or
 
 ```js
-function getMenu(user: User): Menu {
-  if (!Array.isArray(user.favoriteFoods)) {
+function printMenu({ favoriteFoods }) {
+  if (!Array.isArray(favoriteFoods)) {
     throw new Error('expected favoriteFoods to be set!');
   }
 
-  const mealItems = getLunchMenu(user.favoriteFoods);
-
-  return {
-    name: 'lunch',
-    items: mealItems,
-  };
+  const menu = getMenu(favoriteFoods);
+  console.log(`Today's menu is: ${menu}`)
 }
 ```
 
