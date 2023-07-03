@@ -3,7 +3,9 @@ title: Give a reason when using suppression statements
 tags: ['typechecker', 'linter', 'supression-statements']
 ---
 
-Add a description to suppression statements telling us why it's being silenced. A comment like "x is wrong" is almost never sufficient (if it really is wrong, please file a bug report and link to it in the comment).
+Add a description to suppression statements telling us why it's being silenced.
+
+(A comment like "x is wrong" is almost never sufficient - if it really is wrong, please file a bug report and link to it in the comment.)
 
 ::: bad :::
 
@@ -51,3 +53,9 @@ line is being suppressed, and if or when in the future it can be removed.
 Suppression statements are powerful and can mask buggy code that would otherwise
 be caught - it's usually good to communicate why it's being used, so readers of
 the code can understand the tradeoff and the need for employing it.
+
+## Notes for code reviewers
+
+Code reviewers may link this as a way of employing the socratic method to help folks
+arrive at the conclusion that maybe the typechecker/linter was telling the truth, and
+the "fix" is to rewrite the code to not violate the rule in the first place.
