@@ -1,5 +1,5 @@
 ---
-title: Don't try and outsmart the typechecker
+title: Don't try and outsmart the linter
 tags: ['supression-statements']
 ---
 
