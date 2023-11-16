@@ -28,15 +28,15 @@ https://github.com/facebook/react/blob/master/packages/react/src/ReactElement.js
 https://github.com/facebook/react/blob/ea155e2267b3/packages/react/src/ReactElement.js#L54
 ```
 
-::: note 💡 Tip: Shorter Git Links
+::: note 💡 Tip
 
 Git SHAs can be shortened to just a few characters. So this:
 
-- _https://github.com/facebook/react/blob/ea155e2267b3e4fd958d174f8f0e2b09b1c8ecf/packages/react/src/ReactElement.js_
+`https://github.com/facebook/react/blob/ea155e2267b3e4fd958d174f8f0e2b09b1c8ecf/packages/react/src/ReactElement.js`
 
-can be condensed to
+...can be condensed to:
 
-- _https://github.com/facebook/react/blob/ea155e22/packages/react/src/ReactElement.js#L54_
+`https://github.com/facebook/react/blob/ea155e22/packages/react/src/ReactElement.js#L54`
 
 See more: <https://stackoverflow.com/a/18134919/4396258>
 :::

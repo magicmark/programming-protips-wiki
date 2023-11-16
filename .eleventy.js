@@ -29,28 +29,29 @@ module.exports = function (eleventyConfig) {
   })
     .use(markdownItContainer, "note", {
       render: (tokens, idx) => {
-        if (tokens[idx].type === "container_note_open") {
+        if (tokens[idx].nesting === 1) {
           const suffix = tokens[idx].info.replace(/\s*note\s*/, "");
           const heading = suffix === "" ? "📝 Note" : suffix;
 
           return /* HTML */ `
             <div
-              class="note border-l-4 border-yellow-200 rounded-lg bg-yellow-100 p-4">
+              class="note rounded-lg bg-yellow-100"
+            >
               <div
-                class="text-gray-700 text-sm font-semibold -mb-2 pb-3 border-yellow-400 border-b"
+                class="text-gray-600 text-sm font-bold pt-3 pl-3"
               >
                 ${heading}
               </div>
-            </div>
+              <div class="px-7 pb-2">
           `;
         } else {
-          return "</div>";
+          return "</div></div>";
         }
       },
     })
     .use(markdownItContainer, "good", {
       render: (tokens, idx) => {
-        if (tokens[idx].type === "container_good_open") {
+        if (tokens[idx].nesting === 1) {
           const override = tokens[idx].info.replace(/\s*good\s*/, '').replace(':::', '').trim();
           const label = override === '' ? 'Good' : override;
           return /* HTML */ `<p><strong><span class="mr-2">✅</span>${label}:</strong></p>`;
@@ -61,7 +62,7 @@ module.exports = function (eleventyConfig) {
     })
     .use(markdownItContainer, "bad", {
       render: (tokens, idx) => {
-        if (tokens[idx].type === "container_bad_open") {
+        if (tokens[idx].nesting === 1) {
           const override = tokens[idx].info.replace(/\s*bad\s*/, '').replace(':::', '').trim();
           const label = override === '' ? 'Bad' : override;
           return /* HTML */ `<p><strong><span class="mr-2">❌</span>${label}:</strong></p>`;

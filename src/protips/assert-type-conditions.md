@@ -34,7 +34,7 @@ function printMenu({ favoriteFoods }) {
 }
 ```
 
-or
+::: good Also Good :::
 
 ```js
 function printMenu({ favoriteFoods }) {
