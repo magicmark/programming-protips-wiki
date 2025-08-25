@@ -12,8 +12,22 @@ This is a subset problem of ["don't try and outsmart the typechecker"](/dont-out
 
 ```jsx
 function printMenu({ favoriteFoods }) {
-  // $FlowFixMe: favoriteFood should always be set!
+  // @ts-ignore: favoriteFood should always be set!
   const menu = getMenu(favoriteFoods);
+
+  // print the menu!
+  console.log(`Today's menu is: ${menu}`);
+}
+```
+
+::: bad :::
+
+```jsx
+function printMenu({ favoriteFoods }) {
+  const menu = getMenu(favoriteFoods);
+
+  /* istanbul ignore next: menu item always exists */
+  if (!menu) return;
 
   // print the menu!
   console.log(`Today's menu is: ${menu}`);
@@ -23,10 +37,10 @@ function printMenu({ favoriteFoods }) {
 ::: good :::
 
 ```jsx
-import invariant from 'assert';
+import { strict as assert } from 'node:assert';
 
 function printMenu({ favoriteFoods }) {
-  invariant(Array.isArray(favoriteFoods), 'expected favoriteFoods to be set!');
+  assert(Array.isArray(favoriteFoods), 'expected favoriteFoods to be set!');
   const menu = getMenu(favoriteFoods);
 
   // print the menu!
