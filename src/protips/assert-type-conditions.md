@@ -11,26 +11,24 @@ This is a subset problem of ["don't try and outsmart the typechecker"](/dont-out
 ::: bad :::
 
 ```jsx
-function printMenu({ favoriteFoods }) {
-  // @ts-ignore: favoriteFood should always be set!
-  const menu = getMenu(favoriteFoods);
+function printProcess() {
+  const processDetails = procs.get(1);
 
-  // print the menu!
-  console.log(`Today's menu is: ${menu}`);
+  // @ts-ignore: pid 1 always exists
+  console.log(`pid=1: {processDetails.name}`);
 }
 ```
 
 ::: bad :::
 
 ```jsx
-function printMenu({ favoriteFoods }) {
-  const menu = getMenu(favoriteFoods);
+function printProcess() {
+  const process = procs.get(1);
 
-  /* istanbul ignore next: menu item always exists */
-  if (!menu) return;
+  /* istanbul ignore next: pid=1 always exists */
+  if (!process) return;
 
-  // print the menu!
-  console.log(`Today's menu is: ${menu}`);
+  console.log(`pid=1: {processDetails.name}`);
 }
 ```
 
@@ -39,27 +37,25 @@ function printMenu({ favoriteFoods }) {
 ```jsx
 import { strict as assert } from 'node:assert';
 
-function printMenu({ favoriteFoods }) {
-  assert(Array.isArray(favoriteFoods), 'expected favoriteFoods to be set!');
-  const menu = getMenu(favoriteFoods);
+function printProcess() {
+  const processDetails = procs.get(1);
+  assert(processDetails, 'expected to find process for pid=1');
 
-  // print the menu!
-  console.log(`Today's menu is: ${menu}`);
+  console.log(`pid=1: {processDetails.name}`);
 }
 ```
 
 ::: good Also Good :::
 
 ```js
-function printMenu({ favoriteFoods }) {
-  if (!Array.isArray(favoriteFoods)) {
-    throw new Error('expected favoriteFoods to be set!');
+function printProcess() {
+  const processDetails = procs.get(1);
+
+  if (!processDetails)) {
+    throw new Error('did not find process pid=1');
   }
 
-  const menu = getMenu(favoriteFoods);
-  
-  // print the menu!
-  console.log(`Today's menu is: ${menu}`);
+  console.log(`pid=1: {processDetails.name}`);
 }
 ```
 
