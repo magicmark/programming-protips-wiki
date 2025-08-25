@@ -11,24 +11,24 @@ This is a subset problem of ["don't try and outsmart the typechecker"](/dont-out
 ::: bad :::
 
 ```jsx
-function printProcess() {
-  const processDetails = procs.get(1);
+function printInitProcess() {
+  const init = procs.get(1);
 
   // @ts-ignore: pid 1 always exists
-  console.log(`pid=1: {processDetails.name}`);
+  console.log(`pid=1: {init.name}`);
 }
 ```
 
 ::: bad :::
 
 ```jsx
-function printProcess() {
-  const process = procs.get(1);
+function printInitProcess() {
+  const init = procs.get(1);
 
   /* istanbul ignore next: pid=1 always exists */
-  if (!process) return;
+  if (!init) return;
 
-  console.log(`pid=1: {processDetails.name}`);
+  console.log(`pid=1: {init.name}`);
 }
 ```
 
@@ -37,25 +37,25 @@ function printProcess() {
 ```jsx
 import { strict as assert } from 'node:assert';
 
-function printProcess() {
-  const processDetails = procs.get(1);
-  assert(processDetails, 'expected to find process for pid=1');
+function printInitProcess() {
+  const init = procs.get(1);
+  assert(init, 'expected to find process for pid=1');
 
-  console.log(`pid=1: {processDetails.name}`);
+  console.log(`pid=1: {init.name}`);
 }
 ```
 
 ::: good Also Good :::
 
 ```js
-function printProcess() {
-  const processDetails = procs.get(1);
+function printInitProcess() {
+  const init = procs.get(1);
 
-  if (!processDetails)) {
+  if (!init)) {
     throw new Error('did not find process pid=1');
   }
 
-  console.log(`pid=1: {processDetails.name}`);
+  console.log(`pid=1: {init.name}`);
 }
 ```
 
