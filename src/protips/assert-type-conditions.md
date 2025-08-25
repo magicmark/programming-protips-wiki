@@ -51,7 +51,7 @@ function printInitProcess() {
 function printInitProcess() {
   const init = procs.get(1);
 
-  if (!init)) {
+  if (!init) {
     throw new Error('did not find process pid=1');
   }
 
